@@ -4,8 +4,6 @@
 
 
 
-
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -13,7 +11,92 @@ body
 	line-height: 1.75
 	font-family: $default-font
 	overflow-x: hidden
-	color: $text
+	color: #fff
+	&.ishome
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark //Чтобы не мелькал фон на белый при перезагрузке страницы
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: 1
+.logo
+	img 
+		width: 125px
+		height: auto
+		margin-left: 45px
+
+.phone
+	position: absolute
+	right: 65px
+	top: 44px
+	font-family: fira, sans-serif
+	font-size: 20px
+	white-space: nowrap
+	.fa
+		color: #555
+		font-size: 26px
+		margin-right: 5px
+
+.hamburger
+	right: 0
+	position: absolute
+	top: 34px
+	.hamburger-box
+		width: 34px
+		.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+			width: 34px
+			height: 2px
+			background-color: #fff
+
+.mm-navbar
+	height: auto
+	position: relative
+	border:  none
+	&__title img 
+		width: 128px
+		height: auto
+		margin: 25px 0 35px
+.mm-listitem__btn:not(.mm-listitem__text) // Убрал бордер у подменю
+	border: none
+.mm-listitem_opened > .mm-listitem__btn, .mm-listitem_opened > .mm-panel
+	background: $dark //Переопределил фоновый цвет подменюшки
+// Убираем скролл у меню при её вызове, чтобы не мельтешило
+html.mm-wrapper_opened
+	overflow-y: scroll
+// Добавляем акцентный цвет при наведении
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover
+	color: $accent
+
+.mm-listview 
+	li 
+		a 
+			// Спозицианировали меню чуть поправее ближе к середине
+			// Добавили цвет при наведении
+			padding-left: 14%
+			padding-right: 14%
+			top: 8px
+			transition: color .25s ease
+			color: $accent
+			// Добавили иконку брилианта
+			&::before
+				content: "\f219"
+				font-family: fontawesome
+				margin-right: 8px
+				text-decoration: none
+				font-size: 12px
+				color: #fff
+				border: none
+				
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+section
+	background-color: #fff
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -21,6 +104,8 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+
+
 
 .img-responsive
 	display: block
@@ -34,6 +119,7 @@ body
 
 b, strong
 	font-weight: bold
+
 
 
 
