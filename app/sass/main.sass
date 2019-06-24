@@ -1,14 +1,14 @@
 @import "vars"
 @import "fonts"
 @import "libs"
-
+@import "header"
 
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.75
+	line-height: 1.75			//Стандартный 
 	font-family: $default-font
 	overflow-x: hidden
 	color: #fff
@@ -22,74 +22,50 @@ body
 				position: absolute
 				width: 100%
 				z-index: 1
-.logo
-	img 
-		width: 125px
-		height: auto
-		margin-left: 45px
 
-.phone
-	position: absolute
-	right: 65px
-	top: 44px
-	font-family: fira, sans-serif
-	font-size: 20px
-	white-space: nowrap
-	.fa
-		color: #555
-		font-size: 26px
-		margin-right: 5px
+.title
+	line-height: 1.4 // Если у текста стандартный line-height, то для заголовков отнять от этого 0.3
+	text-transform: uppercase
 
-.hamburger
-	right: 0
-	position: absolute
-	top: 34px
-	.hamburger-box
-		width: 34px
-		.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
-			width: 34px
-			height: 2px
-			background-color: #fff
-
-.mm-navbar
-	height: auto
-	position: relative
-	border:  none
-	&__title img 
-		width: 128px
-		height: auto
-		margin: 25px 0 35px
-.mm-listitem__btn:not(.mm-listitem__text) // Убрал бордер у подменю
-	border: none
-.mm-listitem_opened > .mm-listitem__btn, .mm-listitem_opened > .mm-panel
-	background: $dark //Переопределил фоновый цвет подменюшки
-// Убираем скролл у меню при её вызове, чтобы не мельтешило
-html.mm-wrapper_opened
-	overflow-y: scroll
-// Добавляем акцентный цвет при наведении
-.mm-menu a, .mm-menu a:active, .mm-menu a:hover
-	color: $accent
-
-.mm-listview 
-	li 
-		a 
-			// Спозицианировали меню чуть поправее ближе к середине
-			// Добавили цвет при наведении
-			padding-left: 14%
-			padding-right: 14%
-			top: 8px
-			transition: color .25s ease
-			color: $accent
-			// Добавили иконку брилианта
-			&::before
-				content: "\f219"
-				font-family: fontawesome
-				margin-right: 8px
-				text-decoration: none
-				font-size: 12px
-				color: #fff
-				border: none
-				
+.button			// Стандартная кнопка от WebDesignMaster
+    display: inline-block
+    border: none
+    color: #fff
+    text-decoration: none
+    background-color: $accent
+    padding: 16px 45px
+    font-size: 14px
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 3px
+    border-radius: 2px
+    text-align: center
+    position: relative
+    outline: none
+    transition: background-color .1s ease
+    &::after
+        transition: background-color .2s ease
+        position: absolute
+        content: ''
+        height: 4px
+        bottom: 0
+        width: 100%
+        background-color: darken($accent, 50%)
+        opacity: .18
+        border-bottom-left-radius: 2px
+        border-bottom-right-radius: 2px
+        left: 0
+    &:focus, &:hover
+        text-decoration: none
+        color: #fff
+    &:hover
+        background-color: lighten($accent, 5%)
+        &::after
+            opacity: .22
+    &:active
+        background-color: darken($accent, 5%)
+        &::after
+            opacity: .32
 
 section, header
 	position: relative
