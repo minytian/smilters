@@ -1,0 +1,117 @@
+
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
+
+.carousel-services
+	background-color: $dark
+	&-item
+		color: #fff
+		font-size: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&:hover
+			.carousel-services-image
+				opacity: 1
+		.carousel-logo
+			text-align: center
+			img 
+				width: 100px
+				height: auto
+				display: inline-block
+			.button
+				&-white
+					background-color: #fff
+					color: #444
+					&::after
+						background-color: rgba(#000, .99)
+					&:hover
+						&::after
+							background-color: rgba(#000, .99)
+					&:active
+						&::after
+							background-color: rgba(#000, .99)
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		.owl-prev
+			width: 64px
+			height: 64px
+			background-color: #fff !important
+			color: $dark !important
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px !important
+			&.owl-prev
+				left: 0
+		.owl-next
+			width: 64px
+			height: 64px
+			background-color: #fff !important
+			color: $dark !important
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px !important
+			&.owl-next
+				right: 0
+
+	// Чтобы картинки с услугами были в шахматном порядке
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-services-item
+				flex-direction: column
+
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .7
+		transition: opacity .5s ease
+	&-content
+		position: relative
+		padding: 60px 10% 
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+		.h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			margin-bottom: 20px
+			span 
+				font-weight: 400
+				font-size: 18px
+				font-weight: 300
+				display: block
+	&-list
+		margin: 0
+		padding: 0
+		list-style: none
+		margin-bottom: 25px
+		li 
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: fira, sans-serif
+				color: #4a4a4a
+			.fa 
+				font-size: 14px
+		
+
+		// чтобы карусель не мелькала, когда заканчивается 4й и начинается
+		// новый 1й элемент
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+
+
+@import "media"

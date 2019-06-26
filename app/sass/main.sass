@@ -2,6 +2,7 @@
 @import "fonts"
 @import "libs"
 @import "header"
+@import "carousel-main"
 
 
 body
@@ -11,12 +12,13 @@ body
 	line-height: 1.75			//Стандартный 
 	font-family: $default-font
 	overflow-x: hidden
-	color: #fff
+	color: #555
 	&.ishome
 		.site-header
 			min-height: 700px
 			height: 100vh
 			background-color: $dark //Чтобы не мелькал фон на белый при перезагрузке страницы
+			color: #fff
 			.top-line
 				padding-top: 40px
 				position: absolute

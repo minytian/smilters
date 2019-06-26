@@ -45,8 +45,10 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/mmenu/dist/mmenu.js',		//Подключаем mmenu
+		'app/libs/equalHeights/equalheights.js',		//Подключаем equalheights (работа с высотой)
+		'app/libs/owl.carousel/dist/owl.carousel.min.js',		//Подключаем owl.carousel
 		'app/js/common.js', // Always at the end
-		'app/libs/mmenu/dist/mmenu.js'		//Подключаем mmenu
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)
