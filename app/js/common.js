@@ -80,6 +80,11 @@ $(function() {
 		ths.html(ths.html().replace(/(\S+)\s*$/, '<span>$1</span>'));
 
 	});
+		$('section h2').each(function() {
+		let ths = $(this);
+		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
+
+	});
 
 	/* подключаем equalHeights для изменения высоты блока, если вдруг
 	будет не 3 услуги, а 4, то тогда всблоки будут не равны! */

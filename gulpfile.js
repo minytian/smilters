@@ -48,6 +48,7 @@ gulp.task('scripts', function() {
 		'app/libs/mmenu/dist/mmenu.js',		//Подключаем mmenu
 		'app/libs/equalHeights/equalheights.js',		//Подключаем equalheights (работа с высотой)
 		'app/libs/owl.carousel/dist/owl.carousel.min.js',		//Подключаем owl.carousel
+		'app/libs/fotorama/fotorama.js', 	// подключаем fotorama
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
