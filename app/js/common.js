@@ -86,6 +86,13 @@ $(function() {
 
 	});
 
+	$('select').selectize({
+		create: true,
+		sortField: false,
+	});
+
+
+
 	/* подключаем equalHeights для изменения высоты блока, если вдруг
 	будет не 3 услуги, а 4, то тогда всблоки будут не равны! */
 	// Подключаем вконце после карусели, чтобы пересчёт был после её подключения
@@ -94,5 +101,23 @@ $(function() {
 	}onResize();
 	 window.onresize = function() {onResize()};
 
+
+	 				// отправка на почту (скопировали из unimail)
+	//E-mail Ajax Send
+	 $("form.callback").submit(function() { //Change
+		let th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change изменяять до пути в папке до пути
+			data: th.serialize()
+		}).done(function() {
+			$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
+			setTimeout(function() {
+				$(th).find('.success').removeClass('active').fadeOut();
+				th.trigger("reset");
+			}, 3000);
+		});
+		return false;
+	});
 
 });
