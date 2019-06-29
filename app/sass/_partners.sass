@@ -1,0 +1,60 @@
+
+.s
+	&-partners.section-overlay
+		&::before
+			background-color: #fff
+		.h2
+			margin-top: 10px
+			span 
+			 color: $accent
+		
+.partners 
+	.partner 
+		height: 100%
+		display: flex
+		margin: auto
+	.owl-stage
+		display: flex
+	.owl-item
+		margin-top: 30px
+		img 											// Выравнивание картинок по самому высокому. Те если одна картинка будет выше, другие подравняются по высоте
+			max-width: 100%
+			width: auto
+			display: inline-block
+			margin: auto
+	.owl-nav
+		display: block !important
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 2
+		.owl-prev
+			position: absolute
+			top: 50px
+			color: #999 !important
+			font-size: 30px !important
+			transition: opacity .5s ease
+			&.owl-prev
+				left: -60px
+				padding: 0 15px !important
+		.owl-next
+			position: absolute
+			top: 50px
+			color: #999 !important
+			font-size: 30px !important
+			transition: opacity .5s ease
+			&:hover
+				opacity: .6
+			&.owl-next
+				right: -60px
+				padding: 0 15px !important
+			
+
+
+
+
+
+
+
+
+@import "media" // Always at the end
