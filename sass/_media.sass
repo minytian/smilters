@@ -1,0 +1,92 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.welcome
+		&__title
+			font-size: 63px
+	.header-contacts
+		font-size: 14px
+	.carousel-services-item
+		flex-direction: column
+
+	.s
+		&-king, &-review, &-partners
+			padding: 8% 0
+		&-call 
+			background-size: cover
+
+// ≥992px
++media-breakpoint-down(md)
+	.welcome
+		&__title
+			font-size: 48px
+	.s-call
+		&::before
+			width: 100%
+		.callback
+			padding: 12%
+	.footer-address
+		margin-bottom: 15px
+		.footer-phone
+			font-size: 22px
+			padding-top: 0
+			.fa 
+				top: 9px
+// ≥768px
++media-breakpoint-down(sm)
+	.header-contacts
+		.phone-h
+			text-align: left
+	.button
+		padding: 12px 30px
+	.quots
+		display: none
+	.partners 
+		.owl-nav
+			.owl-prev
+				&.owl-prev
+					left: 0
+			.owl-next
+				&.owl-next
+					right: 0
+	.s-partners
+		.h2
+			margin: 0
+	.social-footer
+		margin-top: 0
+		.soc li a 
+			margin-top: 0
+// ≥576px
++media-breakpoint-down(xs)
+	.welcome
+		&__title
+			font-size: 29px
+			margin-top: 5px
+		&__text
+		font-size: 12px
+		&__undertitle
+			font-size: 11px
+		&__subtitle
+			font-size: 13px
+			margin-top: 14px
+
+	.footer-menu
+		padding-left: 25px
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

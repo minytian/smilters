@@ -1,0 +1,181 @@
+
+// Для top-line
+
+.logo
+	img 
+		width: 125px
+		height: auto
+		margin-left: 45px
+
+.phone
+	position: absolute
+	right: 75px
+	top: 44px
+	font-family: fira, sans-serif
+	font-size: 20px
+	white-space: nowrap
+	.fa
+		color: #555
+		font-size: 26px
+		margin-right: 5px
+
+// css-hamburger и mmenu и их настройки
+
+.hamburger
+	right: 0
+	position: absolute
+	top: 34px
+	.hamburger-box
+		width: 34px
+		.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+			width: 34px
+			height: 2px
+			background-color: #fff
+
+.mm-navbar
+	height: auto
+	position: relative
+	border:  none
+	&__title img 
+		width: 128px
+		height: auto
+		margin: 25px 0 35px
+.mm-listitem__btn:not(.mm-listitem__text) // Убрал бордер у подменю
+	border: none
+.mm-listitem_opened > .mm-listitem__btn, .mm-listitem_opened > .mm-panel
+	background: $dark //Переопределил фоновый цвет подменюшки
+// Убираем скролл у меню при её вызове, чтобы не мельтешило
+html.mm-wrapper_opened
+	overflow-y: scroll
+// Добавляем акцентный цвет при наведении
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover
+	color: $accent
+
+.mm-listview 
+	li 
+		a 
+			// Спозицианировали меню чуть поправее ближе к середине
+			// Добавили цвет при наведении
+			padding-left: 14%
+			padding-right: 14%
+			top: 8px
+			transition: color .25s ease
+			color: $accent
+			// Добавили иконку брилианта
+			&::before
+				content: "\f219"
+				font-family: fontawesome
+				margin-right: 8px
+				text-decoration: none
+				font-size: 12px
+				color: #fff
+				border: none
+
+
+// Текст салона красоты
+
+.header-flex
+	display: flex
+	justify-content: center
+	align-items: center
+	position: relative
+	height: 100%
+	top: 0
+
+.flex-center		//Можно удалить, но дописать флексы по центру в .header-flex
+	margin: auto 
+
+.header-composition
+	text-align: center
+	.button
+		margin-top: 25px
+
+.welcome
+	&__undertitle
+		margin: 40px 0 10px
+		font-size: 14px
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		white-space: nowrap
+		span 
+			margin: 0 10px
+		&::before, &::after
+			content: ""
+			height: 1px
+			width: 100%
+			position: relative
+			background-color: #fff
+			display: inline-block
+	&__title
+		font-weight: 100
+		font-size: 67px
+		margin: 0
+		line-height: 1.6
+		border-bottom: 1px solid #fff
+	&__subtitle
+		display: block
+		text-transform: uppercase
+		font-size: 17px
+		margin-top: 25px
+		font-weight: 600
+		.fa
+			margin-right: 10px
+			font-size: 12px
+			color: #555
+			&:last-child
+				margin-right: inherit
+				margin-left: 10px
+	&__text
+		margin-top: 40px
+
+.header-social
+	position: absolute 
+	display: flex
+	top: 0
+	right: 0
+	height: 100%
+	border-left: rgba(#fff, .1) 1px solid 
+	padding: 0 12px
+
+.soc
+	margin: auto
+	ul, li 
+		margin: 0
+		padding: 0
+		list-style: none
+		a 
+			color: #2c2c2c
+			font-size: 17px
+			display: block
+			background-color: rgba(#fff, .2)
+			width: 38px
+			height: 38px
+			text-align: center
+			margin: 18px 0
+			line-height: 38px
+			border-radius: 50%
+			transition: background-color .25s ease
+			&:hover
+				background-color: rgba(#fff, .4)
+
+.header-contacts
+	position: absolute 
+	bottom: 0
+	left: 0
+	border-top: 1px solid rgba(#fff, .15)
+	padding: 12px 0
+	width: 100%
+	background-color: rgba(#151515, .15)
+	&:last-child
+		white-space: nowrap
+	.fa 
+		margin-right: 15px
+		color: #555
+		font-size: 18px
+	.phone-h
+		font-family: fira, sans-serif 
+		text-align: center 
+		display: block 
+
+@import "media" // Always at the end
